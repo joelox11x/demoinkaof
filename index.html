@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="es" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viajes Mundo Inka — Tours en Cusco, Perú</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --teal:#C49A2A;
+  --teal-dark:#8B6914;
+  --teal-deeper:#5C420A;
+  --teal-light:#FBF3E0;
+  --teal-mid:#A8841F;
+  --navy:#1A0F00;
+  --gold:#E07B39;
+  --white:#FFFFFF;
+  --offwhite:#FDFAF4;
+  --text:#1A120A;
+  --muted:#6B5E4D;
+  --border:rgba(196,154,42,0.15);
+  --shadow-sm:0 4px 24px rgba(139,105,20,0.08);
+  --shadow-md:0 12px 48px rgba(139,105,20,0.14);
+  --shadow-lg:0 24px 80px rgba(139,105,20,0.2);
+  --r:3px;--r-lg:8px;--r-xl:16px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.6;}
+img{display:block;max-width:100%;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--offwhite);}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:3px;}
+
+/* ── i18n: hide/show ── */
+[data-es],[data-en]{transition:opacity .2s;}
+html.en [data-es]{display:none!important;}
+html.es [data-en]{display:none!important;}
+html:not(.en):not(.es) [data-en]{display:none!important;}
+
+/* ========== NAV ========== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:76px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow 0.3s,background 0.3s;
+}
+nav.scrolled{box-shadow:var(--shadow-sm);background:rgba(255,255,255,0.99);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{height:54px;width:auto;object-fit:contain;}
+.nav-logo-fallback{display:flex;align-items:center;gap:8px;}
+.nav-logo-fallback .logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
+.nav-logo-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--teal-dark);line-height:1.2;}
+.nav-logo-sub{font-size:0.58rem;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;}
+
+.nav-links{display:flex;align-items:center;gap:0.2rem;list-style:none;}
+.nav-links>li{position:relative;}
+.nav-links a{display:flex;align-items:center;gap:4px;padding:8px 13px;font-size:0.82rem;font-weight:500;color:var(--text);text-decoration:none;border-radius:var(--r);transition:background 0.2s,color 0.2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{background:var(--teal-light);color:var(--teal-dark);}
+.nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-md);min-width:180px;padding:8px;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:opacity 0.2s,transform 0.2s,visibility 0.2s;}
+.nav-links li:hover .nav-dropdown{opacity:1;visibility:visible;pointer-events:all;transform:translateY(0);}
+.nav-dropdown a{display:block;padding:9px 14px;font-size:0.82rem;border-radius:var(--r);color:var(--text);}
+.nav-dropdown a:hover{background:var(--teal-light);color:var(--teal-dark);}
+.nav-chevron{display:inline-block;width:9px;height:9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);transition:transform 0.2s;}
+.nav-links li:hover .nav-chevron{transform:rotate(225deg) translate(-2px,-2px);}
+.nav-cta{background:var(--teal)!important;color:var(--white)!important;padding:10px 20px!important;border-radius:var(--r-lg)!important;font-weight:600!important;font-size:0.82rem!important;box-shadow:0 4px 16px rgba(196,154,42,0.35)!important;transition:background 0.2s,transform 0.15s,box-shadow 0.2s!important;}
+.nav-cta:hover{background:var(--teal-dark)!important;transform:translateY(-1px)!important;box-shadow:0 8px 24px rgba(196,154,42,0.45)!important;}
+
+.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:transform 0.3s,opacity 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.mobile-nav{position:fixed;top:76px;left:0;right:0;bottom:0;z-index:999;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;padding:2rem 6%;gap:0.3rem;transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;}
+.mobile-nav.open{transform:translateX(0);}
+.mobile-nav a{display:block;padding:14px 0;font-size:1rem;font-weight:500;color:var(--text);text-decoration:none;border-bottom:1px solid rgba(196,154,42,0.1);transition:color 0.2s,padding-left 0.2s;}
+.mobile-nav a:hover{color:var(--teal-dark);padding-left:8px;}
+.mobile-nav .mob-sub{font-size:0.85rem;color:var(--muted);padding-left:1rem;border-bottom:1px solid rgba(196,154,42,0.07);}
+.mobile-nav .mob-cta{margin-top:1.5rem;background:var(--teal);color:var(--white)!important;padding:14px 24px!important;border-radius:var(--r-lg);font-weight:600!important;text-align:center;box-shadow:0 6px 20px rgba(196,154,42,0.3);}
+
+/* ========== HERO ========== */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:76px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;z-index:0;background-image:url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=1800&q=85');background-size:cover;background-position:center;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(92,66,10,0.90) 0%,rgba(139,105,20,0.80) 40%,rgba(26,15,0,0.78) 100%);}
+.hero-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;}
+.particle{position:absolute;width:3px;height:3px;background:rgba(196,154,42,0.55);border-radius:50%;animation:float-particle linear infinite;}
+@keyframes float-particle{0%{transform:translateY(100vh) rotate(0deg);opacity:0;}10%{opacity:1;}90%{opacity:1;}100%{transform:translateY(-10vh) rotate(720deg);opacity:0;}}
+
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 5% 80px 8%;position:relative;z-index:3;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(196,154,42,0.18);border:1px solid rgba(196,154,42,0.4);border-radius:100px;padding:7px 16px;margin-bottom:2rem;width:fit-content;}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse-dot 2s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.7);}}
+.hero-badge span{font-size:0.68rem;font-weight:500;color:var(--teal);letter-spacing:0.15em;text-transform:uppercase;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.6rem);font-weight:700;line-height:1.07;color:var(--white);margin-bottom:0.5rem;}
+.hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--teal),#E8C46A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-tagline{font-size:0.78rem;font-weight:400;color:rgba(255,255,255,0.5);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2rem;}
+.hero-desc{font-size:0.95rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.75);max-width:440px;margin-bottom:2.5rem;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;}
+.hero-stats{display:flex;gap:2.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.12);}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--teal);line-height:1;margin-bottom:4px;}
+.stat-label{font-size:0.72rem;color:rgba(255,255,255,0.45);letter-spacing:0.1em;text-transform:uppercase;}
+
+.hero-right{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;padding:128px 4% 40px 4%;}
+.hero-mosaic-item{position:relative;border-radius:var(--r-lg);overflow:hidden;transition:transform 0.4s ease;cursor:pointer;min-height:0;}
+.hero-mosaic-item:hover{transform:scale(1.03);z-index:3;}
+.mosaic-img{width:100%;height:100%;background-size:cover;background-position:center;transition:transform 0.6s ease;}
+.hero-mosaic-item:hover .mosaic-img{transform:scale(1.08);}
+.mosaic-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,12,0,0.88) 0%,rgba(26,12,0,0.25) 55%,transparent 100%);}
+.mosaic-info{position:absolute;bottom:0;left:0;right:0;padding:16px 14px;}
+.mosaic-label{display:inline-block;font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.95);background:rgba(196,154,42,0.28);backdrop-filter:blur(8px);border:1px solid rgba(196,154,42,0.35);padding:3px 9px;border-radius:100px;margin-bottom:6px;}
+.mosaic-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:3px;}
+.mosaic-price{font-size:0.78rem;color:rgba(255,255,255,0.65);}
+.mosaic-price strong{color:#F4C56A;font-weight:600;}
+
+/* ========== BUTTONS ========== */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--r-lg);font-size:0.85rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all 0.25s;letter-spacing:0.03em;font-family:'Outfit',sans-serif;}
+.btn-teal{background:var(--teal);color:var(--white);box-shadow:0 8px 28px rgba(196,154,42,0.35);}
+.btn-teal:hover{background:var(--teal-mid);transform:translateY(-2px);box-shadow:0 12px 36px rgba(196,154,42,0.45);}
+.btn-ghost{background:rgba(255,255,255,0.1);color:var(--white);border:1px solid rgba(255,255,255,0.25);backdrop-filter:blur(8px);}
+.btn-ghost:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.5);}
+.btn-gold{background:var(--gold);color:var(--white);box-shadow:0 8px 28px rgba(224,123,57,0.35);}
+.btn-gold:hover{background:#E8935A;transform:translateY(-2px);box-shadow:0 12px 36px rgba(224,123,57,0.45);}
+.btn-wa{background:#25D366;color:var(--white);box-shadow:0 8px 24px rgba(37,211,102,0.3);}
+.btn-wa:hover{background:#20B858;transform:translateY(-2px);}
+.btn-arrow{display:inline-flex;align-items:center;width:18px;height:18px;transition:transform 0.2s;}
+.btn:hover .btn-arrow{transform:translateX(3px);}
+
+/* ========== SECTIONS ========== */
+section{padding:100px 6%;}
+.eyebrow{display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal-dark);background:var(--teal-light);padding:5px 14px;border-radius:100px;margin-bottom:1.2rem;}
+.eyebrow-dark{color:var(--teal);background:rgba(196,154,42,0.15);}
+h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;line-height:1.12;color:var(--navy);margin-bottom:1.2rem;}
+h2.section-title em{font-style:italic;color:var(--teal-dark);}
+.section-desc{font-size:0.92rem;font-weight:300;line-height:1.9;color:var(--muted);max-width:500px;}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem;}
+.link-arrow{display:inline-flex;align-items:center;gap:6px;font-size:0.8rem;font-weight:600;color:var(--teal-dark);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1.5px solid var(--teal);padding-bottom:2px;transition:color 0.2s,gap 0.2s;}
+.link-arrow:hover{color:var(--teal-mid);gap:10px;}
+
+/* ========== TOURS / DESTINOS ========== */
+.destinos-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:280px 280px;gap:3px;border-radius:var(--r-xl);overflow:hidden;}
+.dc{position:relative;overflow:hidden;cursor:pointer;}
+.dc:nth-child(1){grid-column:1/6;grid-row:1/3;}
+.dc:nth-child(2){grid-column:6/9;grid-row:1/2;}
+.dc:nth-child(3){grid-column:9/13;grid-row:1/2;}
+.dc:nth-child(4){grid-column:6/10;grid-row:2/3;}
+.dc:nth-child(5){grid-column:10/13;grid-row:2/3;}
+.dc-img{width:100%;height:100%;background-size:cover;background-position:center;transition:transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);}
+.dc:hover .dc-img{transform:scale(1.08);}
+.dc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,12,0,0.88) 0%,rgba(26,12,0,0.2) 55%,transparent 100%);transition:background 0.3s;}
+.dc:hover .dc-overlay{background:linear-gradient(to top,rgba(26,12,0,0.92) 0%,rgba(26,12,0,0.35) 60%,rgba(26,12,0,0.1) 100%);}
+.dc-info{position:absolute;bottom:0;left:0;right:0;padding:24px 22px;}
+.dc-tag{font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);background:rgba(196,154,42,0.18);border:1px solid rgba(196,154,42,0.3);padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:8px;}
+.dc-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--white);line-height:1.15;margin-bottom:5px;}
+.dc:first-child .dc-name{font-size:2.3rem;}
+.dc-price{font-size:0.82rem;color:rgba(255,255,255,0.65);}
+.dc-price strong{color:#F4C56A;font-weight:600;}
+.dc-btn{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0.8);transition:opacity 0.25s,transform 0.25s;cursor:pointer;}
+.dc:hover .dc-btn{opacity:1;transform:scale(1);}
+
+/* ========== SERVICIOS CARDS ========== */
+.servicios-section{background:var(--offwhite);padding:100px 6%;}
+.servicios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:3.5rem;}
+.srv-card{background:var(--white);border:1px solid #F0E8D0;border-radius:var(--r-xl);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;cursor:pointer;}
+.srv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--teal);}
+.srv-img{height:180px;background-size:cover;background-position:center;position:relative;}
+.srv-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,12,0,0.6) 0%,transparent 60%);}
+.srv-badge{position:absolute;top:12px;left:12px;font-size:0.58rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#fff;background:rgba(196,154,42,0.85);padding:4px 10px;border-radius:50px;}
+.srv-body{padding:22px 22px 18px;}
+.srv-icon{font-size:1.5rem;margin-bottom:10px;}
+.srv-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.srv-desc{font-size:0.8rem;color:var(--muted);line-height:1.7;margin-bottom:14px;}
+.srv-includes{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.srv-tag{font-size:0.65rem;font-weight:600;letter-spacing:0.08em;background:var(--teal-light);color:var(--teal-dark);padding:3px 10px;border-radius:50px;}
+.srv-footer{padding:14px 22px;border-top:1px solid #F0E8D0;display:flex;align-items:center;justify-content:space-between;}
+.srv-price{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--teal-dark);}
+.srv-price-sub{font-size:0.68rem;color:var(--muted);}
+.srv-cta{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-dark);display:flex;align-items:center;gap:4px;transition:gap .2s,color .2s;}
+.srv-card:hover .srv-cta{gap:8px;color:var(--gold);}
+
+/* ========== NOSOTROS DARK ========== */
+.intl-bg{padding:100px 6%;position:relative;overflow:hidden;}
+.intl-bg-photo{position:absolute;inset:0;z-index:0;background-image:url('https://images.unsplash.com/photo-1605792657660-596af9009e82?w=1800&q=80');background-size:cover;background-position:center;}
+.intl-bg-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,12,0,0.93) 0%,rgba(92,66,10,0.90) 40%,rgba(26,12,0,0.88) 100%);}
+.intl-bg-noise{position:absolute;inset:0;z-index:1;opacity:0.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:200px 200px;background-repeat:repeat;pointer-events:none;}
+.intl-bg>.section-head,.intl-bg>.nos-grid-inner{position:relative;z-index:2;}
+
+.nos-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+.nos-imgs{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:14px;}
+.nos-img1,.nos-img2{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);}
+.nos-img1{aspect-ratio:2/3;}
+.nos-img2{aspect-ratio:4/3;margin-top:2.5rem;}
+.nos-img1 img,.nos-img2 img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
+.nos-img1:hover img,.nos-img2:hover img{transform:scale(1.04);}
+.nos-floating-card{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--white);padding:18px 24px;border-radius:var(--r-lg);box-shadow:var(--shadow-lg);text-align:center;white-space:nowrap;}
+.nfc-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;line-height:1;display:block;}
+.nfc-label{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.85;}
+.valores-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:2.5rem;}
+.valor-item{padding:1.4rem;border:1px solid #F0E8D0;border-radius:var(--r-lg);transition:border-color 0.2s,box-shadow 0.2s;cursor:default;}
+.valor-item:hover{border-color:var(--teal);box-shadow:0 4px 20px rgba(196,154,42,0.1);}
+.vi-icon{width:38px;height:38px;border-radius:var(--r);background:var(--teal-light);display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem;}
+.valor-item h4{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.valor-item p{font-size:0.78rem;color:var(--muted);line-height:1.7;}
+
+/* ========== PROMO ========== */
+.promo-bg{
+  padding:100px 6%;position:relative;overflow:hidden;text-align:center;
+  background:url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=1800&q=85') center/cover no-repeat;
+}
+.promo-bg::before{
+  content:'';position:absolute;inset:0;
+  background:rgba(92,58,8,0.82);
+}
+.promo-bg::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  opacity:0.04;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
+.promo-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(224,123,57,0.15);border:1px solid rgba(224,123,57,0.35);border-radius:100px;padding:7px 18px;margin-bottom:1.5rem;position:relative;z-index:1;}
+.promo-badge span{font-size:0.68rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);}
+.promo-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4.2rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:1.2rem;position:relative;z-index:1;}
+.promo-title em{font-style:italic;color:var(--teal);}
+.promo-desc{font-size:0.9rem;font-weight:300;color:rgba(255,255,255,0.65);max-width:480px;margin:0 auto 2.5rem;line-height:1.85;position:relative;z-index:1;}
+.promo-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;z-index:1;}
+
+/* ========== TESTIMONIOS ========== */
+.test-bg{background:var(--offwhite);padding:100px 6%;}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:3.5rem;}
+.test-card{background:var(--white);border:1px solid #F0E8D0;border-radius:var(--r-xl);padding:2rem;transition:box-shadow 0.3s,transform 0.3s,border-color 0.3s;}
+.test-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);border-color:var(--teal);}
+.test-stars{display:flex;gap:3px;margin-bottom:1rem;}
+.star{width:14px;height:14px;background:var(--teal);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+.test-quote{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;font-weight:400;color:var(--navy);line-height:1.7;margin-bottom:1.5rem;}
+.test-author{display:flex;align-items:center;gap:12px;}
+.test-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;color:var(--white);flex-shrink:0;}
+.test-name{font-size:0.87rem;font-weight:600;color:var(--navy);}
+.test-loc{font-size:0.72rem;color:var(--muted);}
+
+/* ========== PARTNERS ========== */
+.partners{padding:60px 6%;border-top:1px solid #F0E8D0;border-bottom:1px solid #F0E8D0;}
+.partners-label{text-align:center;font-size:0.62rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;}
+.partners-logos{display:flex;justify-content:center;align-items:center;gap:3.5rem;flex-wrap:wrap;}
+.p-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#D4C4A0;letter-spacing:0.05em;transition:color 0.2s;cursor:default;}
+.p-logo:hover{color:var(--teal);}
+
+/* ========== CONTACT ========== */
+.contact-section{padding:100px 6%;background:linear-gradient(to bottom,var(--offwhite),var(--white));}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:6rem;align-items:start;margin-top:3.5rem;}
+.contact-info h3{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--navy);margin-bottom:1rem;}
+.contact-info p{font-size:0.9rem;color:var(--muted);line-height:1.85;margin-bottom:2rem;}
+.contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:1.4rem;}
+.contact-icon{width:42px;height:42px;border-radius:var(--r-lg);flex-shrink:0;background:var(--teal-light);display:flex;align-items:center;justify-content:center;margin-top:2px;}
+.contact-item-text h4{font-size:0.82rem;font-weight:600;color:var(--navy);margin-bottom:2px;}
+.contact-item-text p{font-size:0.82rem;color:var(--muted);}
+.wa-contact-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:var(--white);padding:14px 28px;border-radius:var(--r-lg);font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:600;text-decoration:none;margin-top:1.5rem;box-shadow:0 6px 20px rgba(37,211,102,0.3);transition:all 0.25s;}
+.wa-contact-btn:hover{background:#20B858;transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,0.4);}
+.form-card{background:var(--white);border:1px solid #F0E8D0;border-radius:var(--r-xl);padding:2.5rem;box-shadow:var(--shadow-sm);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{margin-bottom:1.2rem;}
+.form-group.full{grid-column:1/-1;}
+.form-group label{display:block;font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:6px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1.5px solid #E8DFC8;border-radius:var(--r-lg);font-family:'Outfit',sans-serif;font-size:0.88rem;color:var(--text);background:var(--offwhite);outline:none;transition:border-color 0.2s,box-shadow 0.2s,background 0.2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(196,154,42,0.1);background:var(--white);}
+.form-group textarea{resize:vertical;min-height:110px;line-height:1.6;}
+.form-group select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B6914' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+.form-submit{width:100%;padding:15px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:var(--white);border:none;border-radius:var(--r-lg);font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;letter-spacing:0.04em;box-shadow:0 8px 24px rgba(196,154,42,0.3);transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(196,154,42,0.4);}
+.form-note{font-size:0.72rem;color:var(--muted);text-align:center;margin-top:0.8rem;line-height:1.6;}
+
+/* ========== FOOTER ========== */
+footer{background:var(--navy);padding:80px 6% 40px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem;}
+.footer-logo img{height:60px;width:auto;object-fit:contain;margin-bottom:1.2rem;}
+.footer-tagline{font-size:0.82rem;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.85;max-width:240px;margin-bottom:1.5rem;}
+.footer-social{display:flex;gap:8px;}
+.social-icon{width:36px;height:36px;border-radius:var(--r);border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:0.72rem;color:rgba(255,255,255,0.5);text-decoration:none;transition:border-color 0.2s,color 0.2s,background 0.2s;}
+.social-icon:hover{border-color:var(--teal);color:var(--teal);background:rgba(196,154,42,0.08);}
+.footer-col h5{font-size:0.62rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.2rem;}
+.footer-col a{display:block;font-size:0.82rem;font-weight:300;color:rgba(255,255,255,0.55);text-decoration:none;margin-bottom:0.7rem;transition:color 0.2s;}
+.footer-col a:hover{color:var(--teal);}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-legal{font-size:0.72rem;font-weight:300;color:rgba(255,255,255,0.3);line-height:1.7;max-width:580px;}
+.footer-rnt{background:rgba(196,154,42,0.12);border:1px solid rgba(196,154,42,0.25);padding:7px 16px;border-radius:100px;font-size:0.68rem;font-weight:600;color:var(--teal);letter-spacing:0.1em;}
+
+/* ========== WA FLOAT ========== */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:500;display:flex;align-items:center;gap:12px;}
+.wa-btn{width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,0.45);cursor:pointer;transition:transform 0.25s,box-shadow 0.25s;text-decoration:none;}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 12px 36px rgba(37,211,102,0.55);}
+.wa-label{background:var(--white);border:1px solid #E0D8C0;padding:8px 16px;border-radius:100px;font-size:0.78rem;font-weight:500;color:var(--text);box-shadow:var(--shadow-sm);white-space:nowrap;animation:wa-pulse 3s ease-in-out infinite;}
+@keyframes wa-pulse{0%,100%{opacity:1;}50%{opacity:0.7;}}
+.btt{position:fixed;bottom:28px;left:28px;z-index:500;width:44px;height:44px;border-radius:50%;background:var(--teal);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(196,154,42,0.35);opacity:0;transform:translateY(10px);transition:opacity 0.3s,transform 0.3s,background 0.2s;}
+.btt.visible{opacity:1;transform:translateY(0);}
+.btt:hover{background:var(--teal-dark);}
+
+/* ========== ANIMATIONS ========== */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+.fade-up-d1{transition-delay:0.1s;}
+.fade-up-d2{transition-delay:0.2s;}
+.fade-up-d3{transition-delay:0.3s;}
+.fade-up-d4{transition-delay:0.4s;}
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--teal-dark);color:var(--white);padding:12px 24px;border-radius:100px;font-size:0.85rem;font-weight:500;box-shadow:var(--shadow-md);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;z-index:2000;white-space:nowrap;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:1100px){.servicios-grid{grid-template-columns:1fr 1fr;}.test-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;}
+  .hero-left{padding:80px 6% 50px;}
+  .hero-right{height:420px;padding:0 6% 0;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;margin-bottom:0;}
+  .nos-grid{grid-template-columns:1fr;gap:3rem;}
+  .nos-imgs{max-width:480px;margin:0 auto;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .destinos-grid{grid-template-columns:1fr 1fr;grid-template-rows:260px 220px 220px;}
+  .dc:nth-child(1){grid-column:1/3;grid-row:1/2;}
+  .dc:nth-child(2){grid-column:1/2;grid-row:2/3;}
+  .dc:nth-child(3){grid-column:2/3;grid-row:2/3;}
+  .dc:nth-child(4){grid-column:1/2;grid-row:3/4;}
+  .dc:nth-child(5){grid-column:2/3;grid-row:3/4;}
+  .contact-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  nav{padding:0 5%;}
+  section{padding:70px 5%;}
+  .servicios-grid{grid-template-columns:1fr;}
+  .test-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+  .destinos-grid{display:flex;flex-direction:column;}
+  .dc{height:220px;}
+  .dc:first-child{height:300px;}
+  .partners-logos{gap:2rem;}
+  .form-row{grid-template-columns:1fr;}
+  .hero-right{height:380px;padding:0 5% 0;}
+  .hero-stats{gap:1.5rem;}
+  .hero h1{font-size:2.6rem;}
+  .mobile-nav{top:76px;}
+}
+@media(max-width:480px){
+  nav{padding:0 4%;}
+  section{padding:60px 4%;}
+  .hero-left{padding:70px 4% 40px;}
+  .hero-right{padding:0 4% 0;height:320px;}
+  .hero h1{font-size:2.2rem;}
+  .hero-stats{flex-wrap:wrap;gap:1.2rem;}
+  .stat-num{font-size:1.8rem;}
+  .wa-float{bottom:20px;right:16px;}
+  .wa-label{display:none;}
+  .btt{bottom:20px;left:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.54-PM.jpeg"
+         alt="Viajes Mundo Inka"
+         onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="nav-logo-fallback" style="display:none;">
+      <div class="logo-icon">🏔️</div>
+      <div>
+        <div class="nav-logo-name">Viajes Mundo Inka</div>
+        <div class="nav-logo-sub">Cusco · Perú</div>
+      </div>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#inicio" class="active"><span data-es>Inicio</span><span data-en>Home</span></a></li>
+    <li><a href="#nosotros"><span data-es>Nosotros</span><span data-en>About Us</span></a></li>
+    <li>
+      <a href="#tours"><span data-es>Tours</span><span data-en>Tours</span> <span class="nav-chevron"></span></a>
+      <div class="nav-dropdown">
+        <a href="#tours"><span data-es>🥾 Full Day</span><span data-en>🥾 Full Day</span></a>
+        <a href="#tours"><span data-es>🏛️ City Tour</span><span data-en>🏛️ City Tour</span></a>
+        <a href="#tours"><span data-es>🏔️ Trekking</span><span data-en>🏔️ Trekking</span></a>
+        <a href="#tours"><span data-es>🌈 Montaña Colores</span><span data-en>🌈 Rainbow Mountain</span></a>
+      </div>
+    </li>
+    <li><a href="#servicios"><span data-es>Servicios</span><span data-en>Services</span></a></li>
+    <li><a href="#contacto"><span data-es>Contacto</span><span data-en>Contact</span></a></li>
+    <li>
+      <a href="https://wa.me/51915059707?text=Hola,%20quiero%20reservar%20un%20tour" target="_blank" rel="noopener" class="nav-cta">
+        <span data-es>Reservar tour 🏔️</span><span data-en>Book a tour 🏔️</span>
+      </a>
+    </li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#inicio"><span data-es>🏠 Inicio</span><span data-en>🏠 Home</span></a>
+  <a href="#nosotros"><span data-es>👥 Nosotros</span><span data-en>👥 About Us</span></a>
+  <a href="#tours"><span data-es>🏔️ Tours</span><span data-en>🏔️ Tours</span></a>
+  <a href="#tours" class="mob-sub"><span data-es>— Laguna Humantay</span><span data-en>— Humantay Lake</span></a>
+  <a href="#tours" class="mob-sub"><span data-es>— Machu Picchu</span><span data-en>— Machu Picchu</span></a>
+  <a href="#tours" class="mob-sub"><span data-es>— Montaña 7 Colores</span><span data-en>— Rainbow Mountain</span></a>
+  <a href="#servicios"><span data-es>⭐ Servicios</span><span data-en>⭐ Services</span></a>
+  <a href="#contacto"><span data-es>📋 Contacto</span><span data-en>📋 Contact</span></a>
+  <a href="https://wa.me/51915059707?text=Hola,%20quiero%20reservar%20un%20tour" target="_blank" rel="noopener" class="mob-cta">
+    <span data-es>💬 Reservar por WhatsApp</span><span data-en>💬 Book via WhatsApp</span>
+  </a>
+</div>
+
+<!-- HERO -->
+<div class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-particles" id="particles"></div>
+
+  <div class="hero-left">
+    <div class="hero-badge fade-up">
+      <div class="hero-badge-dot"></div>
+      <span data-es>Agencia Certificada · Cusco, Perú</span>
+      <span data-en>Certified Agency · Cusco, Peru</span>
+    </div>
+    <div class="hero-tagline fade-up fade-up-d1">
+      <span data-es>Descubre Cusco y el Perú auténtico</span>
+      <span data-en>Discover authentic Cusco & Peru</span>
+    </div>
+    <h1 class="fade-up fade-up-d2">
+      <span data-es>Vive tu próxima<br><em>gran aventura</em></span>
+      <span data-en>Live your next<br><em>great adventure</em></span>
+    </h1>
+    <p class="hero-desc fade-up fade-up-d3">
+      <span data-es>Somos una agencia especializada en crear experiencias auténticas, seguras y memorables para viajeros nacionales y extranjeros. Tu aventura en Cusco empieza aquí.</span>
+      <span data-en>We specialize in creating authentic, safe and memorable experiences for national and international travelers. Your Cusco adventure starts here.</span>
+    </p>
+    <div class="hero-actions fade-up fade-up-d4">
+      <a href="https://wa.me/51915059707?text=Hola,%20quiero%20explorar%20sus%20tours" target="_blank" rel="noopener" class="btn btn-teal">
+        <span data-es>Explorar tours</span><span data-en>Explore tours</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="https://wa.me/51915059707" target="_blank" rel="noopener" class="btn btn-ghost">
+        <span data-es>💬 Hablar con un asesor</span><span data-en>💬 Talk to an advisor</span>
+      </a>
+    </div>
+    <div class="hero-stats fade-up fade-up-d4">
+      <div><div class="stat-num">7+</div><div class="stat-label" data-es>Tours disponibles</div><div class="stat-label" data-en>Available tours</div></div>
+      <div><div class="stat-num">500+</div><div class="stat-label" data-es>Viajeros felices</div><div class="stat-label" data-en>Happy travelers</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label" data-es>Experiencias únicas</div><div class="stat-label" data-en>Unique experiences</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-mosaic-item">
+      <div class="mosaic-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.52-PM-e1773973042536.jpeg')"></div>
+      <div class="mosaic-overlay"></div>
+      <div class="mosaic-info">
+        <div class="mosaic-label" data-es>Full Day</div><div class="mosaic-label" data-en>Full Day</div>
+        <div class="mosaic-name">Laguna Humantay</div>
+        <div class="mosaic-price" data-es>Desde <strong>S/ 80</strong></div>
+        <div class="mosaic-price" data-en>From <strong>S/ 80</strong></div>
+      </div>
+    </div>
+    <div class="hero-mosaic-item">
+      <div class="mosaic-img" style="background-image:url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&q=85')"></div>
+      <div class="mosaic-overlay"></div>
+      <div class="mosaic-info">
+        <div class="mosaic-label" data-es>Maravilla</div><div class="mosaic-label" data-en>Wonder</div>
+        <div class="mosaic-name">Machu Picchu</div>
+        <div class="mosaic-price" data-es>Desde <strong>S/ 350</strong></div>
+        <div class="mosaic-price" data-en>From <strong>S/ 350</strong></div>
+      </div>
+    </div>
+    <div class="hero-mosaic-item">
+      <div class="mosaic-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.53-PM-2-e1773972459533.jpeg')"></div>
+      <div class="mosaic-overlay"></div>
+      <div class="mosaic-info">
+        <div class="mosaic-label" data-es>7 Colores</div><div class="mosaic-label" data-en>Rainbow Mtn</div>
+        <div class="mosaic-name">Montaña</div>
+        <div class="mosaic-price" data-es>Desde <strong>S/ 90</strong></div>
+        <div class="mosaic-price" data-en>From <strong>S/ 90</strong></div>
+      </div>
+    </div>
+    <div class="hero-mosaic-item">
+      <div class="mosaic-img" style="background-image:url('https://images.unsplash.com/photo-1526392060635-9d6019884377?w=600&q=85')"></div>
+      <div class="mosaic-overlay"></div>
+      <div class="mosaic-info">
+        <div class="mosaic-label" data-es>City Tour</div><div class="mosaic-label" data-en>City Tour</div>
+        <div class="mosaic-name">Cusco Imperial</div>
+        <div class="mosaic-price" data-es>Desde <strong>S/ 50</strong></div>
+        <div class="mosaic-price" data-en>From <strong>S/ 50</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOURS DESTACADOS -->
+<section id="tours">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow"><span data-es>Tours destacados</span><span data-en>Featured tours</span></span>
+      <h2 class="section-title">
+        <span data-es>Cusco te <em>sorprende</em></span>
+        <span data-en>Cusco will <em>amaze you</em></span>
+      </h2>
+      <p class="section-desc">
+        <span data-es>Cada tour está diseñado para que vivas el Perú de forma única, segura y memorable.</span>
+        <span data-en>Each tour is designed so you experience Peru in a unique, safe and memorable way.</span>
+      </p>
+    </div>
+    <a href="https://wa.me/51915059707?text=Quiero%20ver%20todos%20los%20tours%20disponibles" target="_blank" rel="noopener" class="link-arrow">
+      <span data-es>Ver todos los tours →</span><span data-en>See all tours →</span>
+    </a>
+  </div>
+  <div class="destinos-grid">
+    <div class="dc">
+      <div class="dc-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.52-PM-e1773973042536.jpeg')"></div>
+      <div class="dc-overlay"></div>
+      <div class="dc-info">
+        <span class="dc-tag">⭐ <span data-es>Tour Estrella</span><span data-en>Star Tour</span></span>
+        <div class="dc-name">Laguna Humantay</div>
+        <div class="dc-price"><span data-es>Desde</span><span data-en>From</span> <strong>S/ 80</strong> <span data-es>p/p</span><span data-en>p/p</span></div>
+      </div>
+      <div class="dc-btn"><svg width="14" height="14" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+    </div>
+    <div class="dc">
+      <div class="dc-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.53-PM-2-e1773972459533.jpeg')"></div>
+      <div class="dc-overlay"></div>
+      <div class="dc-info">
+        <span class="dc-tag">🌈 <span data-es>Trekking</span><span data-en>Trekking</span></span>
+        <div class="dc-name"><span data-es>Montaña 7 Colores</span><span data-en>Rainbow Mountain</span></div>
+        <div class="dc-price"><span data-es>Desde</span><span data-en>From</span> <strong>S/ 90</strong></div>
+      </div>
+      <div class="dc-btn"><svg width="14" height="14" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+    </div>
+    <div class="dc">
+      <div class="dc-img" style="background-image:url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&q=85')"></div>
+      <div class="dc-overlay"></div>
+      <div class="dc-info">
+        <span class="dc-tag">🏛️ <span data-es>Maravilla Mundial</span><span data-en>World Wonder</span></span>
+        <div class="dc-name">Machu Picchu</div>
+        <div class="dc-price"><span data-es>Desde</span><span data-en>From</span> <strong>S/ 350</strong></div>
+      </div>
+      <div class="dc-btn"><svg width="14" height="14" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+    </div>
+    <div class="dc">
+      <div class="dc-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.52-PM-1-e1773972546424.jpeg')"></div>
+      <div class="dc-overlay"></div>
+      <div class="dc-info">
+        <span class="dc-tag">🏙️ City Tour</span>
+        <div class="dc-name">Cusco Imperial</div>
+        <div class="dc-price"><span data-es>Desde</span><span data-en>From</span> <strong>S/ 50</strong></div>
+      </div>
+      <div class="dc-btn"><svg width="14" height="14" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+    </div>
+    <div class="dc">
+      <div class="dc-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.53-PM-e1773972580932.jpeg')"></div>
+      <div class="dc-overlay"></div>
+      <div class="dc-info">
+        <span class="dc-tag">🏔️ <span data-es>Trekking</span><span data-en>Trekking</span></span>
+        <div class="dc-name"><span data-es>7 Lagunas Ausangate</span><span data-en>7 Lakes Ausangate</span></div>
+        <div class="dc-price"><span data-es>Desde</span><span data-en>From</span> <strong>S/ 110</strong></div>
+      </div>
+      <div class="dc-btn"><svg width="14" height="14" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<div class="servicios-section" id="servicios">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow"><span data-es>Nuestros servicios</span><span data-en>Our services</span></span>
+      <h2 class="section-title">
+        <span data-es>Todo lo que <em>necesitas</em></span>
+        <span data-en>Everything you <em>need</em></span>
+      </h2>
+      <p class="section-desc">
+        <span data-es>Diseñamos cada experiencia con atención al detalle para que solo te preocupes de disfrutar.</span>
+        <span data-en>We design each experience with attention to detail so you only worry about enjoying it.</span>
+      </p>
+    </div>
+  </div>
+  <div class="servicios-grid">
+    <div class="srv-card fade-up">
+      <div class="srv-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.52-PM-e1773973042536.jpeg')">
+        <div class="srv-img-overlay"></div>
+        <div class="srv-badge">Full Day</div>
+      </div>
+      <div class="srv-body">
+        <div class="srv-icon">🏞️</div>
+        <div class="srv-title"><span data-es>Laguna Humantay</span><span data-en>Humantay Lake</span></div>
+        <div class="srv-desc">
+          <span data-es>Aguas turquesas rodeadas de nevados. Caminata de naturaleza pura con desayuno y almuerzo incluido.</span>
+          <span data-en>Turquoise waters surrounded by snowy peaks. Nature hike with breakfast and lunch included.</span>
+        </div>
+        <div class="srv-includes">
+          <span class="srv-tag" data-es>Desayuno + Almuerzo</span><span class="srv-tag" data-en>Breakfast + Lunch</span>
+          <span class="srv-tag" data-es>Guía profesional</span><span class="srv-tag" data-en>Pro guide</span>
+          <span class="srv-tag" data-es>Transporte</span><span class="srv-tag" data-en>Transport</span>
+        </div>
+      </div>
+      <div class="srv-footer">
+        <div><div class="srv-price">S/ 80</div><div class="srv-price-sub" data-es>por persona</div><div class="srv-price-sub" data-en>per person</div></div>
+        <a href="https://wa.me/51915059707?text=Quiero%20reservar%20Laguna%20Humantay" target="_blank" class="srv-cta"><span data-es>Reservar</span><span data-en>Book now</span> →</a>
+      </div>
+    </div>
+    <div class="srv-card fade-up fade-up-d1">
+      <div class="srv-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.53-PM-3.jpeg')">
+        <div class="srv-img-overlay"></div>
+        <div class="srv-badge">City Tour</div>
+      </div>
+      <div class="srv-body">
+        <div class="srv-icon">🏛️</div>
+        <div class="srv-title"><span data-es>City Tour Cusco</span><span data-en>Cusco City Tour</span></div>
+        <div class="srv-desc">
+          <span data-es>Qoricancha, Sacsayhuamán, Qenqo, Puca Pucara y Tambomachay. Historia inca en un solo día.</span>
+          <span data-en>Qoricancha, Sacsayhuamán, Qenqo, Puca Pucara & Tambomachay. Inca history in one day.</span>
+        </div>
+        <div class="srv-includes">
+          <span class="srv-tag" data-es>Guía bilingüe</span><span class="srv-tag" data-en>Bilingual guide</span>
+          <span class="srv-tag" data-es>Transporte</span><span class="srv-tag" data-en>Transport</span>
+          <span class="srv-tag" data-es>Medio día</span><span class="srv-tag" data-en>Half day</span>
+        </div>
+      </div>
+      <div class="srv-footer">
+        <div><div class="srv-price">S/ 50</div><div class="srv-price-sub" data-es>por persona</div><div class="srv-price-sub" data-en>per person</div></div>
+        <a href="https://wa.me/51915059707?text=Quiero%20reservar%20City%20Tour%20Cusco" target="_blank" class="srv-cta"><span data-es>Reservar</span><span data-en>Book now</span> →</a>
+      </div>
+    </div>
+    <div class="srv-card fade-up fade-up-d2">
+      <div class="srv-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.53-PM-e1773972580932.jpeg')">
+        <div class="srv-img-overlay"></div>
+        <div class="srv-badge" data-es>Medio Día</div><div class="srv-badge" data-en>Half Day</div>
+      </div>
+      <div class="srv-body">
+        <div class="srv-icon">🌊</div>
+        <div class="srv-title"><span data-es>Mirador Laguna Huaypo</span><span data-en>Huaypo Lake Viewpoint</span></div>
+        <div class="srv-desc">
+          <span data-es>Un rincón escondido cerca de Chinchero. Vistas a los nevados, naturaleza pura y spots perfectos para fotos.</span>
+          <span data-en>A hidden gem near Chinchero. Snowy peak views, pure nature and perfect photo spots.</span>
+        </div>
+        <div class="srv-includes">
+          <span class="srv-tag" data-es>Vista panorámica</span><span class="srv-tag" data-en>Panoramic view</span>
+          <span class="srv-tag" data-es>Fotos increíbles</span><span class="srv-tag" data-en>Amazing photos</span>
+          <span class="srv-tag" data-es>Guía</span><span class="srv-tag" data-en>Guide</span>
+        </div>
+      </div>
+      <div class="srv-footer">
+        <div><div class="srv-price">S/ 60</div><div class="srv-price-sub" data-es>por persona</div><div class="srv-price-sub" data-en>per person</div></div>
+        <a href="https://wa.me/51915059707?text=Quiero%20reservar%20Laguna%20Huaypo" target="_blank" class="srv-cta"><span data-es>Reservar</span><span data-en>Book now</span> →</a>
+      </div>
+    </div>
+    <div class="srv-card fade-up">
+      <div class="srv-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.52-PM-1-e1773972546424.jpeg')">
+        <div class="srv-img-overlay"></div>
+        <div class="srv-badge">Full Day</div>
+      </div>
+      <div class="srv-body">
+        <div class="srv-icon">🏔️</div>
+        <div class="srv-title"><span data-es>7 Lagunas — Ausangate</span><span data-en>7 Lakes — Ausangate</span></div>
+        <div class="srv-desc">
+          <span data-es>Lagunas de colores intensos rodeadas de nevados y aguas termales de Pacchanta para relajarse al final.</span>
+          <span data-en>Intensely colored lakes surrounded by snowy peaks, ending at Pacchanta hot springs.</span>
+        </div>
+        <div class="srv-includes">
+          <span class="srv-tag" data-es>Desayuno + Almuerzo</span><span class="srv-tag" data-en>Breakfast + Lunch</span>
+          <span class="srv-tag" data-es>Aguas termales</span><span class="srv-tag" data-en>Hot springs</span>
+          <span class="srv-tag" data-es>Guía</span><span class="srv-tag" data-en>Guide</span>
+        </div>
+      </div>
+      <div class="srv-footer">
+        <div><div class="srv-price">S/ 110</div><div class="srv-price-sub" data-es>por persona</div><div class="srv-price-sub" data-en>per person</div></div>
+        <a href="https://wa.me/51915059707?text=Quiero%20reservar%207%20Lagunas%20Ausangate" target="_blank" class="srv-cta"><span data-es>Reservar</span><span data-en>Book now</span> →</a>
+      </div>
+    </div>
+    <div class="srv-card fade-up fade-up-d1">
+      <div class="srv-img" style="background-image:url('https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.53-PM-2-e1773972459533.jpeg')">
+        <div class="srv-img-overlay"></div>
+        <div class="srv-badge">Full Day</div>
+      </div>
+      <div class="srv-body">
+        <div class="srv-icon">🌈</div>
+        <div class="srv-title"><span data-es>Montaña 7 Colores</span><span data-en>Rainbow Mountain</span></div>
+        <div class="srv-desc">
+          <span data-es>Vinicunca, uno de los paisajes más increíbles del mundo. Caminata entre colores únicos en los Andes.</span>
+          <span data-en>Vinicunca, one of the world's most incredible landscapes. Hike through unique colors in the Andes.</span>
+        </div>
+        <div class="srv-includes">
+          <span class="srv-tag" data-es>Desayuno + Almuerzo</span><span class="srv-tag" data-en>Breakfast + Lunch</span>
+          <span class="srv-tag" data-es>Guía profesional</span><span class="srv-tag" data-en>Pro guide</span>
+          <span class="srv-tag" data-es>Transporte</span><span class="srv-tag" data-en>Transport</span>
+        </div>
+      </div>
+      <div class="srv-footer">
+        <div><div class="srv-price">S/ 90</div><div class="srv-price-sub" data-es>por persona</div><div class="srv-price-sub" data-en>per person</div></div>
+        <a href="https://wa.me/51915059707?text=Quiero%20reservar%20Monta%C3%B1a%207%20Colores" target="_blank" class="srv-cta"><span data-es>Reservar</span><span data-en>Book now</span> →</a>
+      </div>
+    </div>
+    <div class="srv-card fade-up fade-up-d2">
+      <div class="srv-img" style="background-image:url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&q=80')">
+        <div class="srv-img-overlay"></div>
+        <div class="srv-badge" data-es>Maravilla Mundial</div><div class="srv-badge" data-en>World Wonder</div>
+      </div>
+      <div class="srv-body">
+        <div class="srv-icon">🏯</div>
+        <div class="srv-title">Machu Picchu</div>
+        <div class="srv-desc">
+          <span data-es>El sueño de todo viajero. Tren panorámico, tour guiado por la ciudadela y tiempo libre para fotos.</span>
+          <span data-en>Every traveler's dream. Panoramic train, guided citadel tour and free time for photos.</span>
+        </div>
+        <div class="srv-includes">
+          <span class="srv-tag" data-es>Tren panorámico</span><span class="srv-tag" data-en>Panoramic train</span>
+          <span class="srv-tag" data-es>Guía oficial</span><span class="srv-tag" data-en>Official guide</span>
+          <span class="srv-tag" data-es>Entrada incluida</span><span class="srv-tag" data-en>Entry included</span>
+        </div>
+      </div>
+      <div class="srv-footer">
+        <div><div class="srv-price">S/ 350</div><div class="srv-price-sub" data-es>por persona</div><div class="srv-price-sub" data-en>per person</div></div>
+        <a href="https://wa.me/51915059707?text=Quiero%20reservar%20Machu%20Picchu" target="_blank" class="srv-cta"><span data-es>Reservar</span><span data-en>Book now</span> →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="nos-grid">
+    <div class="nos-imgs fade-up">
+      <div class="nos-img1"><img src="https://portafoliojoelox.site/wp-content/uploads/2026/03/10704.jpg" alt="Viajes Mundo Inka"></div>
+      <div><div class="nos-img2"><img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=500&q=80" alt="Cusco tours"></div></div>
+      <div class="nos-floating-card">
+        <span class="nfc-num">500+</span>
+        <span class="nfc-label" data-es>Viajeros felices</span>
+        <span class="nfc-label" data-en>Happy travelers</span>
+      </div>
+    </div>
+    <div class="fade-up fade-up-d2">
+      <span class="eyebrow"><span data-es>Quiénes somos</span><span data-en>Who we are</span></span>
+      <h2 class="section-title">
+        <span data-es>Viajes con <em>alma andina</em></span>
+        <span data-en>Journeys with an <em>Andean soul</em></span>
+      </h2>
+      <p class="section-desc">
+        <span data-es>Somos Viajes Mundo Inka, una agencia cusqueña especializada en crear experiencias auténticas, seguras y memorables para viajeros nacionales y extranjeros. Nuestro compromiso es que vivas Cusco y el Perú de forma única.</span>
+        <span data-en>We are Viajes Mundo Inka, a Cusco-based agency specialized in creating authentic, safe and memorable experiences for national and international travelers. Our commitment is that you experience Cusco and Peru in a unique way.</span>
+      </p>
+      <div class="valores-grid">
+        <div class="valor-item">
+          <div class="vi-icon"><svg width="18" height="18" fill="none" stroke="#8B6914" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h4><span data-es>Experiencias auténticas</span><span data-en>Authentic experiences</span></h4>
+          <p><span data-es>Conexión real con la cultura, historia y naturaleza del Cusco profundo.</span><span data-en>Real connection with the culture, history and nature of deep Cusco.</span></p>
+        </div>
+        <div class="valor-item">
+          <div class="vi-icon"><svg width="18" height="18" fill="none" stroke="#8B6914" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h4><span data-es>Guías certificados</span><span data-en>Certified guides</span></h4>
+          <p><span data-es>Profesionales bilingües con profundo conocimiento de cada destino.</span><span data-en>Bilingual professionals with deep knowledge of every destination.</span></p>
+        </div>
+        <div class="valor-item">
+          <div class="vi-icon"><svg width="18" height="18" fill="none" stroke="#8B6914" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <h4><span data-es>Seguridad garantizada</span><span data-en>Safety guaranteed</span></h4>
+          <p><span data-es>Todos nuestros tours cumplen estándares de seguridad para tu tranquilidad.</span><span data-en>All our tours meet safety standards for your peace of mind.</span></p>
+        </div>
+        <div class="valor-item">
+          <div class="vi-icon"><svg width="18" height="18" fill="none" stroke="#8B6914" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h4><span data-es>Precios transparentes</span><span data-en>Transparent pricing</span></h4>
+          <p><span data-es>Sin costos ocultos. Todo detallado y claro desde el primer momento.</span><span data-en>No hidden costs. Everything detailed and clear from the start.</span></p>
+        </div>
+      </div>
+      <a href="https://wa.me/51915059707?text=Quiero%20saber%20m%C3%A1s%20sobre%20Viajes%20Mundo%20Inka" target="_blank" rel="noopener" class="btn btn-teal" style="margin-top:2rem;display:inline-flex;">
+        <span data-es>Conocer más →</span><span data-en>Learn more →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<div class="promo-bg">
+  <div class="promo-badge"><span style="font-size:1rem;">⚡</span><span data-es>Oferta especial · Cupos limitados</span><span data-en>Special offer · Limited spots</span></div>
+  <h2 class="promo-title">
+    <span data-es>¿Listo para tu próxima<br><em>aventura en los Andes?</em></span>
+    <span data-en>Ready for your next<br><em>Andean adventure?</em></span>
+  </h2>
+  <p class="promo-desc">
+    <span data-es>Reserva hoy y asegura tu cupo. Tours disponibles todos los días con salida desde Cusco.</span>
+    <span data-en>Book today and secure your spot. Tours available every day departing from Cusco.</span>
+  </p>
+  <div class="promo-btns">
+    <a href="https://wa.me/51915059707?text=Quiero%20ver%20las%20promociones%20disponibles" target="_blank" rel="noopener" class="btn btn-gold">
+      <span data-es>Ver promociones</span><span data-en>See promotions</span> <span class="btn-arrow">→</span>
+    </a>
+    <a href="https://wa.me/51915059707" target="_blank" rel="noopener" class="btn btn-ghost">
+      <span data-es>💬 WhatsApp</span><span data-en>💬 WhatsApp</span>
+    </a>
+  </div>
+</div>
+
+<!-- TESTIMONIOS -->
+<div class="test-bg">
+  <div style="text-align:center;">
+    <span class="eyebrow"><span data-es>Lo que dicen nuestros viajeros</span><span data-en>What our travelers say</span></span>
+    <h2 class="section-title" style="text-align:center;">
+      <span data-es>Experiencias que <em>inspiran</em></span>
+      <span data-en>Experiences that <em>inspire</em></span>
+    </h2>
+  </div>
+  <div class="test-grid">
+    <div class="test-card fade-up">
+      <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+      <p class="test-quote" data-es>"La Laguna Humantay fue simplemente mágica. El equipo de Mundo Inka hizo que todo fuera perfecto, desde el transporte hasta la guía. ¡Volvería mil veces!"</p>
+      <p class="test-quote" data-en>"Humantay Lake was simply magical. The Mundo Inka team made everything perfect, from transport to the guide. I would go back a thousand times!"</p>
+      <div class="test-author">
+        <div class="test-avatar" style="background:var(--teal);">NH</div>
+        <div><div class="test-name">Nadia Patricia Bone</div><div class="test-loc" data-es>Bogotá, Colombia</div><div class="test-loc" data-en>Bogotá, Colombia</div></div>
+      </div>
+    </div>
+    <div class="test-card fade-up fade-up-d1">
+      <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+      <p class="test-quote" data-es>"Machu Picchu con Mundo Inka fue una experiencia de vida. Guía increíble, todo organizado y el tren panorámico fue espectacular. 100% recomendado."</p>
+      <p class="test-quote" data-en>"Machu Picchu with Mundo Inka was a life experience. Incredible guide, everything organized and the panoramic train was spectacular. 100% recommended."</p>
+      <div class="test-author">
+        <div class="test-avatar" style="background:var(--gold);">FR</div>
+        <div><div class="test-name">Familia Rojas-Sánchez</div><div class="test-loc" data-es>Lima, Perú</div><div class="test-loc" data-en>Lima, Peru</div></div>
+      </div>
+    </div>
+    <div class="test-card fade-up fade-up-d2">
+      <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+      <p class="test-quote" data-es>"La Montaña de 7 Colores superó todas mis expectativas. Los colores son reales y el servicio de Mundo Inka es de primera. ¡Gracias familia Castro-Cuba!"</p>
+      <p class="test-quote" data-en>"Rainbow Mountain exceeded all my expectations. The colors are real and Mundo Inka's service is top-notch. Thank you Castro-Cuba family!"</p>
+      <div class="test-author">
+        <div class="test-avatar" style="background:var(--teal-deeper);">GD</div>
+        <div><div class="test-name">Grupo Dorado</div><div class="test-loc" data-es>Buenos Aires, Argentina</div><div class="test-loc" data-en>Buenos Aires, Argentina</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNERS -->
+<div class="partners">
+  <p class="partners-label"><span data-es>Trabajamos con</span><span data-en>We work with</span></p>
+  <div class="partners-logos">
+    <span class="p-logo">PeruRail</span>
+    <span class="p-logo">Inca Rail</span>
+    <span class="p-logo">MINCETUR</span>
+    <span class="p-logo">Consettur</span>
+    <span class="p-logo">PromPerú</span>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<div class="contact-section" id="contacto">
+  <div style="text-align:center;margin-bottom:0;">
+    <span class="eyebrow"><span data-es>Contáctanos</span><span data-en>Contact us</span></span>
+    <h2 class="section-title" style="text-align:center;">
+      <span data-es>Planifica tu aventura <em>perfecta</em></span>
+      <span data-en>Plan your <em>perfect</em> adventure</span>
+    </h2>
+    <p class="section-desc" style="text-align:center;margin:0 auto;">
+      <span data-es>Cuéntanos qué tour te interesa y te enviamos la cotización sin costo.</span>
+      <span data-en>Tell us which tour you're interested in and we'll send you a free quote.</span>
+    </p>
+  </div>
+  <div class="contact-grid">
+    <div class="fade-up">
+      <h3><span data-es>Estamos listos para asesorarte</span><span data-en>We're ready to help you</span></h3>
+      <p><span data-es>Nuestro equipo responde en menos de 1 hora por WhatsApp. Hablamos español e inglés.</span><span data-en>Our team responds in less than 1 hour via WhatsApp. We speak Spanish and English.</span></p>
+      <div class="contact-item">
+        <div class="contact-icon"><svg width="18" height="18" fill="none" stroke="#8B6914" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.9 1.18 2 2 0 012.87 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.9v2.02z"/></svg></div>
+        <div class="contact-item-text"><h4>WhatsApp</h4><p>+51 915 059 707</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><svg width="18" height="18" fill="none" stroke="#8B6914" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="contact-item-text"><h4><span data-es>Correo</span><span data-en>Email</span></h4><p>reservas.viajesmundoinka@gmail.com</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><svg width="18" height="18" fill="none" stroke="#8B6914" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="contact-item-text"><h4><span data-es>Ubicación</span><span data-en>Location</span></h4><p><span data-es>Cusco, Perú · Salidas desde el centro</span><span data-en>Cusco, Peru · Departures from downtown</span></p></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><svg width="18" height="18" fill="none" stroke="#8B6914" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div>
+        <div class="contact-item-text"><h4><span data-es>Horario</span><span data-en>Hours</span></h4><p><span data-es>Lun–Dom: 7:00am – 8:00pm</span><span data-en>Mon–Sun: 7:00am – 8:00pm</span></p></div>
+      </div>
+      <a href="https://wa.me/51915059707?text=Hola%2C%20quiero%20reservar%20un%20tour%20en%20Cusco" target="_blank" rel="noopener" class="wa-contact-btn">
+        <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-es>Chatear por WhatsApp ahora</span><span data-en>Chat on WhatsApp now</span>
+      </a>
+    </div>
+    <div class="form-card fade-up fade-up-d2">
+      <div style="margin-bottom:1.8rem;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">
+          <span data-es>Solicitar cotización gratis</span><span data-en>Request a free quote</span>
+        </h3>
+        <p style="font-size:0.82rem;color:var(--muted);">
+          <span data-es>Te respondemos en menos de 1 hora.</span><span data-en>We respond in less than 1 hour.</span>
+        </p>
+      </div>
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group"><label><span data-es>Nombre</span><span data-en>Name</span></label><input type="text" name="nombre" placeholder="Tu nombre" required></div>
+          <div class="form-group"><label>WhatsApp</label><input type="tel" name="telefono" placeholder="+51 / +57 ..."></div>
+        </div>
+        <div class="form-group"><label><span data-es>Correo electrónico</span><span data-en>Email</span></label><input type="email" name="email" placeholder="tu@correo.com" required></div>
+        <div class="form-group">
+          <label><span data-es>Tour de interés</span><span data-en>Tour of interest</span></label>
+          <select name="tour">
+            <option value="">Seleccionar tour</option>
+            <option>Laguna Humantay — Full Day</option>
+            <option>City Tour Cusco — Medio día</option>
+            <option>Mirador Laguna Huaypo</option>
+            <option>7 Lagunas — Ausangate</option>
+            <option>Montaña 7 Colores — Vinicunca</option>
+            <option>Machu Picchu</option>
+            <option>Tour personalizado</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span data-es>N° de personas</span><span data-en>N° of people</span></label>
+            <select name="personas">
+              <option>1 persona</option><option>2 personas</option><option>3-4 personas</option><option>5-10 personas</option><option>Grupo +10</option>
+            </select>
+          </div>
+          <div class="form-group"><label><span data-es>Fecha tentativa</span><span data-en>Tentative date</span></label><input type="date" name="fecha"></div>
+        </div>
+        <div class="form-group"><label><span data-es>Mensaje</span><span data-en>Message</span></label><textarea name="mensaje" placeholder="Cuéntanos más sobre tu viaje…"></textarea></div>
+        <button type="submit" class="form-submit">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+          <span data-es>Enviar solicitud de cotización</span><span data-en>Send quote request</span>
+        </button>
+        <p class="form-note"><span data-es>Al enviar aceptas que nos comuniquemos contigo por WhatsApp o email.</span><span data-en>By submitting you agree we may contact you via WhatsApp or email.</span></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo"><img src="https://portafoliojoelox.site/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-8.34.54-PM.jpeg" alt="Viajes Mundo Inka" onerror="this.style.display='none'"></div>
+      <p class="footer-tagline"><span data-es>Agencia cusqueña especializada en crear experiencias auténticas, seguras y memorables. Vive Cusco de forma única.</span><span data-en>Cusco-based agency specialized in creating authentic, safe and memorable experiences. Experience Cusco uniquely.</span></p>
+      <div class="footer-social">
+        <a href="https://wa.me/51915059707" target="_blank" rel="noopener" class="social-icon">wa</a>
+        <a href="#" class="social-icon">fb</a>
+        <a href="#" class="social-icon">ig</a>
+        <a href="#" class="social-icon">yt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Tours</h5>
+      <a href="https://wa.me/51915059707?text=Info%20Laguna%20Humantay" target="_blank">Laguna Humantay</a>
+      <a href="https://wa.me/51915059707?text=Info%20City%20Tour" target="_blank">City Tour Cusco</a>
+      <a href="https://wa.me/51915059707?text=Info%207%20Colores" target="_blank">Montaña 7 Colores</a>
+      <a href="https://wa.me/51915059707?text=Info%20Ausangate" target="_blank">7 Lagunas Ausangate</a>
+      <a href="https://wa.me/51915059707?text=Info%20Machu%20Picchu" target="_blank">Machu Picchu</a>
+      <a href="https://wa.me/51915059707?text=Info%20Huaypo" target="_blank">Laguna Huaypo</a>
+    </div>
+    <div class="footer-col">
+      <h5><span data-es>Agencia</span><span data-en>Agency</span></h5>
+      <a href="#nosotros"><span data-es>Nosotros</span><span data-en>About Us</span></a>
+      <a href="#tours"><span data-es>Todos los tours</span><span data-en>All tours</span></a>
+      <a href="#contacto"><span data-es>Contacto</span><span data-en>Contact</span></a>
+      <a href="#servicios"><span data-es>Servicios</span><span data-en>Services</span></a>
+    </div>
+    <div class="footer-col">
+      <h5><span data-es>Contacto</span><span data-en>Contact</span></h5>
+      <a href="https://wa.me/51915059707" target="_blank">+51 915 059 707</a>
+      <a href="mailto:reservas.viajesmundoinka@gmail.com">reservas.viajesmundoinka@gmail.com</a>
+      <a>Cusco, Perú</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal"><span data-es>© 2025 Viajes Mundo Inka · Cusco, Perú · Todos los derechos reservados</span><span data-en>© 2025 Viajes Mundo Inka · Cusco, Peru · All rights reserved</span></p>
+    <div class="footer-rnt"><span data-es>Agencia Certificada · Cusco</span><span data-en>Certified Agency · Cusco</span></div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<div class="wa-float">
+  <div class="wa-label"><span data-es>Reserva tu tour hoy</span><span data-en>Book your tour today</span></div>
+  <a href="https://wa.me/51915059707?text=Hola%2C%20quiero%20reservar%20un%20tour%20en%20Cusco" target="_blank" rel="noopener" class="wa-btn">
+    <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="16" height="16" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<div class="toast" id="toast">
+  <span data-es>✅ ¡Mensaje enviado! Te contactaremos pronto.</span>
+  <span data-en>✅ Message sent! We'll contact you soon.</span>
+</div>
+
+<script>
+/* ── PARTICLES ── */
+(function(){
+  const c=document.getElementById('particles');
+  for(let i=0;i<16;i++){
+    const p=document.createElement('div');p.className='particle';
+    p.style.left=Math.random()*100+'%';
+    p.style.width=p.style.height=(Math.random()*3+2)+'px';
+    p.style.animationDuration=(Math.random()*14+10)+'s';
+    p.style.animationDelay=-(Math.random()*18)+'s';
+    c.appendChild(p);
+  }
+})();
+
+/* ── NAV ── */
+const nav=document.getElementById('navbar');
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>60);
+  btt.classList.toggle('visible',window.scrollY>400);
+});
+
+/* ── HAMBURGER ── */
+const ham=document.getElementById('hamburger');
+const mob=document.getElementById('mobileNav');
+ham.addEventListener('click',()=>{
+  ham.classList.toggle('open');mob.classList.toggle('open');
+  document.body.style.overflow=mob.classList.contains('open')?'hidden':'';
+});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  ham.classList.remove('open');mob.classList.remove('open');
+  document.body.style.overflow='';
+}));
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+setTimeout(()=>{document.querySelectorAll('.hero .fade-up').forEach(el=>el.classList.add('visible'));},80);
+
+/* ── FORM ── */
+function handleSubmit(e){
+  e.preventDefault();
+  const f=e.target;
+  const nombre=f.nombre.value.trim();
+  const tour=f.tour.value||'sin especificar';
+  const personas=f.personas.value;
+  const fecha=f.fecha.value||'-';
+  const mensaje=f.mensaje.value.trim();
+  const msg=encodeURIComponent(
+    `Hola! Soy ${nombre} y quiero reservar un tour con Viajes Mundo Inka.\n`+
+    `🏔️ Tour: ${tour}\n👥 Personas: ${personas}\n📅 Fecha: ${fecha}\n`+
+    (mensaje?`📝 Detalle: ${mensaje}\n`:'')+
+    `¡Muchas gracias!`
+  );
+  const toast=document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(()=>toast.classList.remove('show'),3500);
+  setTimeout(()=>window.open(`https://wa.me/51915059707?text=${msg}`,'_blank'),400);
+  f.reset();
+}
+</script>
+</body>
+</html>
