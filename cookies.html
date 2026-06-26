@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Cookies — Viajes Mundo Inka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --teal:#C49A2A;--teal-dark:#8B6914;--teal-deeper:#5C420A;
+  --teal-light:#FBF3E0;--navy:#1A0F00;--gold:#E07B39;
+  --white:#FFFFFF;--offwhite:#FDFAF4;--text:#1A120A;--muted:#6B5E4D;
+  --border:rgba(196,154,42,0.15);
+  --shadow-sm:0 4px 24px rgba(139,105,20,0.08);
+  --shadow-md:0 12px 48px rgba(139,105,20,0.14);
+  --r:3px;--r-lg:8px;--r-xl:16px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--offwhite);color:var(--text);line-height:1.7;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:3px;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{height:54px;width:auto;object-fit:contain;}
+.nav-logo-fb{display:flex;align-items:center;gap:8px;}
+.logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.logo-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--teal-dark);}
+.logo-sub{font-size:0.56rem;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:500;color:var(--teal-dark);text-decoration:none;background:var(--teal-light);padding:8px 16px;border-radius:var(--r-lg);transition:background 0.2s;}
+.nav-back:hover{background:#F0E4C0;}
+
+.legal-hero{padding:140px 6% 60px;background:linear-gradient(135deg,var(--teal-deeper) 0%,var(--teal-dark) 60%,#4A3200 100%);position:relative;overflow:hidden;}
+.legal-hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E") repeat;background-size:200px 200px;opacity:0.04;pointer-events:none;}
+.legal-hero-inner{position:relative;z-index:1;max-width:760px;}
+.legal-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(196,154,42,0.2);border:1px solid rgba(196,154,42,0.4);border-radius:100px;padding:6px 16px;margin-bottom:1.2rem;}
+.legal-badge span{font-size:0.65rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);}
+.legal-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:0.8rem;}
+.legal-hero p{font-size:0.9rem;font-weight:300;color:rgba(255,255,255,0.65);max-width:520px;line-height:1.85;}
+.legal-meta{display:flex;gap:2rem;margin-top:1.8rem;flex-wrap:wrap;}
+.legal-meta-item{display:flex;align-items:center;gap:8px;font-size:0.78rem;color:rgba(255,255,255,0.55);}
+
+.legal-wrap{max-width:860px;margin:0 auto;padding:60px 6% 100px;}
+.legal-toc{background:var(--white);border:1px solid #F0E8D0;border-radius:var(--r-xl);padding:1.8rem 2rem;margin-bottom:3rem;box-shadow:var(--shadow-sm);}
+.legal-toc h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.legal-toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 2rem;}
+.legal-toc li{counter-increment:toc;font-size:0.82rem;}
+.legal-toc li::before{content:counter(toc)". ";color:var(--teal-dark);font-weight:600;}
+.legal-toc a{color:var(--teal-dark);text-decoration:none;transition:color 0.2s;}
+.legal-toc a:hover{color:var(--gold);}
+
+.legal-section{background:var(--white);border:1px solid #F0E8D0;border-radius:var(--r-xl);padding:2.2rem 2.4rem;margin-bottom:1.5rem;box-shadow:var(--shadow-sm);}
+.legal-section-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:1.2rem;}
+.ls-num{width:36px;height:36px;border-radius:var(--r-lg);background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.9rem;font-weight:700;color:var(--teal-dark);flex-shrink:0;margin-top:2px;}
+.legal-section h2{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--navy);line-height:1.2;}
+.legal-section p{font-size:0.88rem;color:var(--muted);line-height:1.85;margin-bottom:0.9rem;}
+.legal-section p:last-child{margin-bottom:0;}
+.legal-section ul{list-style:none;margin:0.6rem 0 0.9rem;}
+.legal-section ul li{font-size:0.87rem;color:var(--muted);line-height:1.75;padding-left:1.2rem;position:relative;margin-bottom:0.3rem;}
+.legal-section ul li::before{content:'›';position:absolute;left:0;color:var(--teal-dark);font-weight:700;}
+.legal-section strong{color:var(--navy);font-weight:600;}
+.legal-highlight{background:var(--teal-light);border-left:3px solid var(--teal);border-radius:0 var(--r-lg) var(--r-lg) 0;padding:1rem 1.2rem;margin:1rem 0;font-size:0.86rem;color:var(--teal-deeper);}
+
+/* Cookie type table */
+.cookie-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.83rem;}
+.cookie-table th{text-align:left;padding:10px 14px;background:var(--teal-light);color:var(--teal-dark);font-weight:600;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;}
+.cookie-table th:first-child{border-radius:var(--r-lg) 0 0 0;}
+.cookie-table th:last-child{border-radius:0 var(--r-lg) 0 0;}
+.cookie-table td{padding:10px 14px;border-bottom:1px solid #F0E8D0;color:var(--muted);vertical-align:top;}
+.cookie-table tr:last-child td{border-bottom:none;}
+.cookie-type-badge{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:50px;}
+.badge-necesaria{background:#E8F5E9;color:#2E7D32;}
+.badge-analitica{background:#E3F2FD;color:#1565C0;}
+.badge-marketing{background:#FFF3E0;color:#E65100;}
+
+/* Toggle switches */
+.cookie-toggle-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #F0E8D0;}
+.cookie-toggle-row:last-child{border-bottom:none;}
+.ct-info h4{font-size:0.88rem;font-weight:600;color:var(--navy);margin-bottom:3px;}
+.ct-info p{font-size:0.78rem;color:var(--muted);line-height:1.6;}
+.ct-switch{position:relative;width:44px;height:24px;flex-shrink:0;margin-left:1rem;}
+.ct-switch input{opacity:0;width:0;height:0;}
+.ct-slider{position:absolute;inset:0;border-radius:100px;background:#D4C4A0;cursor:pointer;transition:background 0.3s;}
+.ct-slider::before{content:'';position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:white;transition:transform 0.3s;box-shadow:0 1px 3px rgba(0,0,0,0.2);}
+input:checked+.ct-slider{background:var(--teal);}
+input:checked+.ct-slider::before{transform:translateX(20px);}
+input:disabled+.ct-slider{opacity:0.7;cursor:not-allowed;}
+
+.btn-save-cookies{display:inline-flex;align-items:center;gap:8px;margin-top:1.4rem;padding:12px 24px;background:var(--teal);color:white;border:none;border-radius:var(--r-lg);font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;box-shadow:0 6px 20px rgba(196,154,42,0.3);transition:all 0.25s;}
+.btn-save-cookies:hover{background:var(--teal-dark);transform:translateY(-1px);}
+
+.legal-footer-bar{background:var(--navy);padding:36px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.lf-copy{font-size:0.75rem;color:rgba(255,255,255,0.35);}
+.lf-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lf-links a{font-size:0.75rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
+.lf-links a:hover{color:var(--teal);}
+
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:500;}
+.wa-btn{width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,0.45);text-decoration:none;transition:transform 0.25s;}
+.wa-btn:hover{transform:scale(1.1);}
+
+@media(max-width:640px){
+  .legal-toc ol{grid-template-columns:1fr;}
+  .legal-section{padding:1.5rem;}
+  nav{padding:0 4%;}
+  .legal-hero{padding:120px 4% 50px;}
+  .legal-wrap{padding:40px 4% 80px;}
+  .cookie-table{display:block;overflow-x:auto;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="http://arqfra-ai.com/wp-content/uploads/2026/06/ChatGPT-Image-25-jun-2026-11_30_25-p.m.png"
+         alt="Viajes Mundo Inka"
+         onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="nav-logo-fb" style="display:none;">
+      <div class="logo-icon">🏔️</div>
+      <div>
+        <div class="logo-name">Viajes Mundo Inka</div>
+        <div class="logo-sub">Cusco · Perú</div>
+      </div>
+    </div>
+  </a>
+  <a href="index.html" class="nav-back">← Volver al inicio</a>
+</nav>
+
+<div class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-badge"><span>🍪 Cookies</span></div>
+    <h1>Política de Cookies</h1>
+    <p>Te explicamos qué cookies utilizamos, para qué sirven y cómo puedes gestionarlas o desactivarlas según tus preferencias.</p>
+    <div class="legal-meta">
+      <div class="legal-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        Última actualización: 25 de junio de 2026
+      </div>
+      <div class="legal-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        Responsable: Viajes Mundo Inka
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="legal-wrap">
+
+  <div class="legal-toc">
+    <h3>
+      <svg width="16" height="16" fill="none" stroke="#8B6914" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      Contenido de esta política
+    </h3>
+    <ol>
+      <li><a href="#c1">¿Qué son las cookies?</a></li>
+      <li><a href="#c2">Cookies que utilizamos</a></li>
+      <li><a href="#c3">Cookies de terceros</a></li>
+      <li><a href="#c4">¿Cómo gestionar cookies?</a></li>
+      <li><a href="#c5">Configurar tus preferencias</a></li>
+      <li><a href="#c6">Más información</a></li>
+    </ol>
+  </div>
+
+  <div class="legal-section" id="c1">
+    <div class="legal-section-header">
+      <div class="ls-num">1</div>
+      <h2>¿Qué son las cookies?</h2>
+    </div>
+    <p>Las cookies son pequeños archivos de texto que los sitios web almacenan en tu dispositivo (computadora, tablet o móvil) cuando los visitas. Sirven para que el sitio recuerde tus preferencias y pueda ofrecerte una experiencia más personalizada y fluida.</p>
+    <p>Las cookies no son virus ni programas dañinos. No acceden a información de tu dispositivo más allá de lo que tú has proporcionado al visitar el sitio.</p>
+    <div class="legal-highlight">Puedes aceptar, rechazar o configurar las cookies en cualquier momento desde el panel de preferencias que encontrarás más abajo en esta página.</div>
+  </div>
+
+  <div class="legal-section" id="c2">
+    <div class="legal-section-header">
+      <div class="ls-num">2</div>
+      <h2>Cookies que utilizamos</h2>
+    </div>
+    <p>En el sitio web de Viajes Mundo Inka utilizamos los siguientes tipos de cookies:</p>
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Duración</th>
+          <th>Finalidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ck</strong></td>
+          <td><span class="cookie-type-badge badge-necesaria">Necesaria</span></td>
+          <td>1 año</td>
+          <td>Recuerda tu preferencia de cookies para no mostrar el banner en cada visita.</td>
+        </tr>
+        <tr>
+          <td><strong>_ga</strong></td>
+          <td><span class="cookie-type-badge badge-analitica">Analítica</span></td>
+          <td>2 años</td>
+          <td>Google Analytics. Distingue usuarios únicos y rastrea sesiones para análisis de tráfico.</td>
+        </tr>
+        <tr>
+          <td><strong>_ga_*</strong></td>
+          <td><span class="cookie-type-badge badge-analitica">Analítica</span></td>
+          <td>2 años</td>
+          <td>Google Analytics GA4. Mantiene el estado de sesión para estadísticas agregadas.</td>
+        </tr>
+        <tr>
+          <td><strong>_gid</strong></td>
+          <td><span class="cookie-type-badge badge-analitica">Analítica</span></td>
+          <td>24 horas</td>
+          <td>Google Analytics. Distingue usuarios para informes diarios de sesión.</td>
+        </tr>
+        <tr>
+          <td><strong>fbp</strong></td>
+          <td><span class="cookie-type-badge badge-marketing">Marketing</span></td>
+          <td>3 meses</td>
+          <td>Meta Pixel. Identifica navegadores para medir la efectividad de anuncios en Facebook e Instagram.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Las cookies <strong>necesarias</strong> no pueden desactivarse ya que son imprescindibles para el funcionamiento básico del sitio. Las cookies analíticas y de marketing requieren tu consentimiento explícito.</p>
+  </div>
+
+  <div class="legal-section" id="c3">
+    <div class="legal-section-header">
+      <div class="ls-num">3</div>
+      <h2>Cookies de terceros</h2>
+    </div>
+    <p>Nuestro sitio puede incluir funcionalidades proporcionadas por terceros que instalan sus propias cookies. Estas son las plataformas que pueden utilizarlas:</p>
+    <ul>
+      <li><strong>Google Analytics:</strong> servicio de análisis web de Google LLC. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--teal-dark);">Política de privacidad de Google</a></li>
+      <li><strong>Meta (Facebook / Instagram):</strong> herramientas de medición de conversiones y remarketing. <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener" style="color:var(--teal-dark);">Política de privacidad de Meta</a></li>
+      <li><strong>Google Fonts:</strong> tipografías alojadas en servidores de Google que pueden registrar solicitudes de fuentes.</li>
+      <li><strong>WhatsApp / Meta:</strong> el botón flotante de WhatsApp puede establecer cookies propias de Meta al interactuar con él.</li>
+    </ul>
+    <div class="legal-highlight">No tenemos control directo sobre las cookies de terceros. Para gestionar estas cookies te recomendamos revisar las políticas de privacidad de cada proveedor.</div>
+  </div>
+
+  <div class="legal-section" id="c4">
+    <div class="legal-section-header">
+      <div class="ls-num">4</div>
+      <h2>¿Cómo gestionar las cookies en tu navegador?</h2>
+    </div>
+    <p>Además del panel de preferencias de este sitio, puedes gestionar o eliminar las cookies directamente desde la configuración de tu navegador:</p>
+    <ul>
+      <li><strong>Google Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos de sitios.</li>
+      <li><strong>Mozilla Firefox:</strong> Preferencias → Privacidad y seguridad → Cookies y datos del sitio.</li>
+      <li><strong>Safari (Mac / iOS):</strong> Preferencias → Privacidad → Administrar datos de sitios web.</li>
+      <li><strong>Microsoft Edge:</strong> Configuración → Privacidad, búsqueda y servicios → Cookies.</li>
+    </ul>
+    <p>Ten en cuenta que deshabilitar las cookies puede afectar la funcionalidad de algunos elementos del sitio web.</p>
+    <p>Para optar por no participar en el seguimiento de Google Analytics en todos los sitios web, puedes instalar el <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--teal-dark);">complemento de inhabilitación de Google Analytics</a>.</p>
+  </div>
+
+  <div class="legal-section" id="c5">
+    <div class="legal-section-header">
+      <div class="ls-num">5</div>
+      <h2>Configura tus preferencias</h2>
+    </div>
+    <p>Puedes activar o desactivar cada categoría de cookies a continuación. Los cambios se aplicarán en tu próxima visita.</p>
+
+    <div class="cookie-toggle-row">
+      <div class="ct-info">
+        <h4>🔒 Cookies necesarias</h4>
+        <p>Imprescindibles para el funcionamiento del sitio. No pueden desactivarse.</p>
+      </div>
+      <label class="ct-switch">
+        <input type="checkbox" checked disabled>
+        <span class="ct-slider"></span>
+      </label>
+    </div>
+    <div class="cookie-toggle-row">
+      <div class="ct-info">
+        <h4>📊 Cookies analíticas</h4>
+        <p>Nos ayudan a entender cómo los visitantes interactúan con el sitio para mejorar la experiencia.</p>
+      </div>
+      <label class="ct-switch">
+        <input type="checkbox" id="ck-analytics" checked>
+        <span class="ct-slider"></span>
+      </label>
+    </div>
+    <div class="cookie-toggle-row">
+      <div class="ct-info">
+        <h4>📣 Cookies de marketing</h4>
+        <p>Permiten mostrarte publicidad relevante en redes sociales y otras plataformas.</p>
+      </div>
+      <label class="ct-switch">
+        <input type="checkbox" id="ck-marketing">
+        <span class="ct-slider"></span>
+      </label>
+    </div>
+
+    <button class="btn-save-cookies" onclick="saveCookiePrefs()">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg>
+      Guardar preferencias
+    </button>
+  </div>
+
+  <div class="legal-section" id="c6">
+    <div class="legal-section-header">
+      <div class="ls-num">6</div>
+      <h2>Más información</h2>
+    </div>
+    <p>Si tienes preguntas sobre el uso de cookies en nuestro sitio, puedes contactarnos en cualquier momento:</p>
+    <ul>
+      <li><strong>Correo:</strong> reservas.viajesmundoinka@gmail.com</li>
+      <li><strong>WhatsApp:</strong> +51 915 059 707</li>
+      <li><strong>Horario de atención:</strong> Lunes a Domingo, 7:00am – 8:00pm (hora Cusco)</li>
+    </ul>
+    <p>Esta política está sujeta a cambios. Cualquier modificación relevante será notificada mediante un aviso en el sitio web.</p>
+    <div class="legal-highlight">¿Dudas adicionales? Consulta también nuestra <a href="privacidad.html" style="color:var(--teal-deeper);font-weight:600;">Política de Privacidad</a> y nuestros <a href="terminos.html" style="color:var(--teal-deeper);font-weight:600;">Términos y Condiciones</a>.</div>
+  </div>
+
+</div>
+
+<footer class="legal-footer-bar">
+  <p class="lf-copy">© 2026 Viajes Mundo Inka · Cusco, Perú</p>
+  <div class="lf-links">
+    <a href="privacidad.html">Privacidad</a>
+    <a href="cookies.html">Cookies</a>
+    <a href="terminos.html">Términos</a>
+    <a href="reclamaciones.html">Reclamaciones</a>
+    <a href="index.html">Inicio</a>
+  </div>
+</footer>
+
+<div class="wa-float">
+  <a href="https://wa.me/51915059707?text=Hola,%20tengo%20una%20consulta" target="_blank" rel="noopener" class="wa-btn">
+    <svg width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+(function(){
+  var ck = localStorage.getItem('ck');
+  if(ck === 'all'){
+    document.getElementById('ck-analytics').checked = true;
+    document.getElementById('ck-marketing').checked = true;
+  } else if(ck === 'basic'){
+    document.getElementById('ck-analytics').checked = false;
+    document.getElementById('ck-marketing').checked = false;
+  }
+})();
+function saveCookiePrefs(){
+  var analytics = document.getElementById('ck-analytics').checked;
+  var marketing = document.getElementById('ck-marketing').checked;
+  if(analytics && marketing){ localStorage.setItem('ck','all'); }
+  else if(!analytics && !marketing){ localStorage.setItem('ck','basic'); }
+  else { localStorage.setItem('ck','custom'); }
+  var btn = document.querySelector('.btn-save-cookies');
+  btn.textContent = '✓ Preferencias guardadas';
+  btn.style.background = '#2E7D32';
+  setTimeout(function(){ btn.innerHTML = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg> Guardar preferencias'; btn.style.background = ''; }, 2500);
+}
+</script>
+</body>
+</html>
