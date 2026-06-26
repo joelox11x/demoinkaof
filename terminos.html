@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Términos y Condiciones — Viajes Mundo Inka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --teal:#C49A2A;--teal-dark:#8B6914;--teal-deeper:#5C420A;
+  --teal-light:#FBF3E0;--navy:#1A0F00;--gold:#E07B39;
+  --white:#FFFFFF;--offwhite:#FDFAF4;--text:#1A120A;--muted:#6B5E4D;
+  --border:rgba(196,154,42,0.15);
+  --shadow-sm:0 4px 24px rgba(139,105,20,0.08);
+  --shadow-md:0 12px 48px rgba(139,105,20,0.14);
+  --r:3px;--r-lg:8px;--r-xl:16px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--offwhite);color:var(--text);line-height:1.7;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:3px;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{height:54px;width:auto;object-fit:contain;}
+.nav-logo-fb{display:flex;align-items:center;gap:8px;}
+.logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.logo-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--teal-dark);}
+.logo-sub{font-size:0.56rem;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:500;color:var(--teal-dark);text-decoration:none;background:var(--teal-light);padding:8px 16px;border-radius:var(--r-lg);transition:background 0.2s;}
+.nav-back:hover{background:#F0E4C0;}
+
+.legal-hero{padding:140px 6% 60px;background:linear-gradient(135deg,var(--teal-deeper) 0%,var(--teal-dark) 60%,#4A3200 100%);position:relative;overflow:hidden;}
+.legal-hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E") repeat;background-size:200px 200px;opacity:0.04;pointer-events:none;}
+.legal-hero-inner{position:relative;z-index:1;max-width:760px;}
+.legal-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(196,154,42,0.2);border:1px solid rgba(196,154,42,0.4);border-radius:100px;padding:6px 16px;margin-bottom:1.2rem;}
+.legal-badge span{font-size:0.65rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);}
+.legal-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:0.8rem;}
+.legal-hero p{font-size:0.9rem;font-weight:300;color:rgba(255,255,255,0.65);max-width:520px;line-height:1.85;}
+.legal-meta{display:flex;gap:2rem;margin-top:1.8rem;flex-wrap:wrap;}
+.legal-meta-item{display:flex;align-items:center;gap:8px;font-size:0.78rem;color:rgba(255,255,255,0.55);}
+
+.legal-wrap{max-width:860px;margin:0 auto;padding:60px 6% 100px;}
+.legal-toc{background:var(--white);border:1px solid #F0E8D0;border-radius:var(--r-xl);padding:1.8rem 2rem;margin-bottom:3rem;box-shadow:var(--shadow-sm);}
+.legal-toc h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.legal-toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 2rem;}
+.legal-toc li{counter-increment:toc;font-size:0.82rem;}
+.legal-toc li::before{content:counter(toc)". ";color:var(--teal-dark);font-weight:600;}
+.legal-toc a{color:var(--teal-dark);text-decoration:none;transition:color 0.2s;}
+.legal-toc a:hover{color:var(--gold);}
+
+.legal-section{background:var(--white);border:1px solid #F0E8D0;border-radius:var(--r-xl);padding:2.2rem 2.4rem;margin-bottom:1.5rem;box-shadow:var(--shadow-sm);}
+.legal-section-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:1.2rem;}
+.ls-num{width:36px;height:36px;border-radius:var(--r-lg);background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.9rem;font-weight:700;color:var(--teal-dark);flex-shrink:0;margin-top:2px;}
+.legal-section h2{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--navy);line-height:1.2;}
+.legal-section p{font-size:0.88rem;color:var(--muted);line-height:1.85;margin-bottom:0.9rem;}
+.legal-section p:last-child{margin-bottom:0;}
+.legal-section ul{list-style:none;margin:0.6rem 0 0.9rem;}
+.legal-section ul li{font-size:0.87rem;color:var(--muted);line-height:1.75;padding-left:1.2rem;position:relative;margin-bottom:0.3rem;}
+.legal-section ul li::before{content:'›';position:absolute;left:0;color:var(--teal-dark);font-weight:700;}
+.legal-section strong{color:var(--navy);font-weight:600;}
+.legal-highlight{background:var(--teal-light);border-left:3px solid var(--teal);border-radius:0 var(--r-lg) var(--r-lg) 0;padding:1rem 1.2rem;margin:1rem 0;font-size:0.86rem;color:var(--teal-deeper);}
+.legal-warning{background:#FFF8E1;border-left:3px solid var(--gold);border-radius:0 var(--r-lg) var(--r-lg) 0;padding:1rem 1.2rem;margin:1rem 0;font-size:0.86rem;color:#7A4A00;}
+
+/* Cancelation policy table */
+.cancel-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.83rem;}
+.cancel-table th{text-align:left;padding:10px 14px;background:var(--teal-light);color:var(--teal-dark);font-weight:600;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;}
+.cancel-table th:first-child{border-radius:var(--r-lg) 0 0 0;}
+.cancel-table th:last-child{border-radius:0 var(--r-lg) 0 0;}
+.cancel-table td{padding:10px 14px;border-bottom:1px solid #F0E8D0;color:var(--muted);vertical-align:top;}
+.cancel-table tr:last-child td{border-bottom:none;}
+
+.legal-footer-bar{background:var(--navy);padding:36px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.lf-copy{font-size:0.75rem;color:rgba(255,255,255,0.35);}
+.lf-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.lf-links a{font-size:0.75rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
+.lf-links a:hover{color:var(--teal);}
+
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:500;}
+.wa-btn{width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,0.45);text-decoration:none;transition:transform 0.25s;}
+.wa-btn:hover{transform:scale(1.1);}
+
+@media(max-width:640px){
+  .legal-toc ol{grid-template-columns:1fr;}
+  .legal-section{padding:1.5rem;}
+  nav{padding:0 4%;}
+  .legal-hero{padding:120px 4% 50px;}
+  .legal-wrap{padding:40px 4% 80px;}
+  .cancel-table{display:block;overflow-x:auto;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="http://arqfra-ai.com/wp-content/uploads/2026/06/ChatGPT-Image-25-jun-2026-11_30_25-p.m.png"
+         alt="Viajes Mundo Inka"
+         onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="nav-logo-fb" style="display:none;">
+      <div class="logo-icon">🏔️</div>
+      <div>
+        <div class="logo-name">Viajes Mundo Inka</div>
+        <div class="logo-sub">Cusco · Perú</div>
+      </div>
+    </div>
+  </a>
+  <a href="index.html" class="nav-back">← Volver al inicio</a>
+</nav>
+
+<div class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-badge"><span>📋 Legal</span></div>
+    <h1>Términos y Condiciones</h1>
+    <p>Al reservar o contratar cualquier servicio de Viajes Mundo Inka aceptas los presentes términos. Te recomendamos leerlos con atención antes de confirmar tu reserva.</p>
+    <div class="legal-meta">
+      <div class="legal-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        Última actualización: 25 de junio de 2026
+      </div>
+      <div class="legal-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        Responsable: Viajes Mundo Inka
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="legal-wrap">
+
+  <div class="legal-toc">
+    <h3>
+      <svg width="16" height="16" fill="none" stroke="#8B6914" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      Contenido de estos términos
+    </h3>
+    <ol>
+      <li><a href="#t1">Identificación de la empresa</a></li>
+      <li><a href="#t2">Aceptación de los términos</a></li>
+      <li><a href="#t3">Reservas y confirmación</a></li>
+      <li><a href="#t4">Precios y pagos</a></li>
+      <li><a href="#t5">Política de cancelación</a></li>
+      <li><a href="#t6">Modificaciones del tour</a></li>
+      <li><a href="#t7">Responsabilidades del viajero</a></li>
+      <li><a href="#t8">Responsabilidad de la agencia</a></li>
+      <li><a href="#t9">Seguros y emergencias</a></li>
+      <li><a href="#t10">Ley aplicable</a></li>
+    </ol>
+  </div>
+
+  <div class="legal-section" id="t1">
+    <div class="legal-section-header">
+      <div class="ls-num">1</div>
+      <h2>Identificación de la empresa</h2>
+    </div>
+    <p><strong>Nombre comercial:</strong> Viajes Mundo Inka</p>
+    <p><strong>Domicilio:</strong> Cusco, Perú</p>
+    <p><strong>Correo electrónico:</strong> reservas.viajesmundoinka@gmail.com</p>
+    <p><strong>WhatsApp:</strong> +51 915 059 707</p>
+    <p>Viajes Mundo Inka es una agencia de turismo local con sede en Cusco, Perú, especializada en tours culturales, de naturaleza y aventura en la región del Cusco y el Valle Sagrado de los Incas.</p>
+  </div>
+
+  <div class="legal-section" id="t2">
+    <div class="legal-section-header">
+      <div class="ls-num">2</div>
+      <h2>Aceptación de los términos</h2>
+    </div>
+    <p>Al realizar una reserva —ya sea a través de nuestro sitio web, WhatsApp, correo electrónico u otro medio— el cliente declara haber leído, comprendido y aceptado íntegramente los presentes Términos y Condiciones, así como nuestra Política de Privacidad y Política de Cookies.</p>
+    <p>Si el cliente realiza una reserva en nombre de un grupo o terceras personas, declara tener autorización para aceptar estos términos en nombre de todos los integrantes del grupo.</p>
+    <div class="legal-highlight">La reserva no se considerará confirmada hasta que Viajes Mundo Inka haya enviado una confirmación expresa por escrito (WhatsApp, correo u otro medio).</div>
+  </div>
+
+  <div class="legal-section" id="t3">
+    <div class="legal-section-header">
+      <div class="ls-num">3</div>
+      <h2>Reservas y confirmación</h2>
+    </div>
+    <p>Para confirmar una reserva el cliente deberá:</p>
+    <ul>
+      <li>Contactar a Viajes Mundo Inka por WhatsApp (+51 915 059 707), correo electrónico o formulario de contacto del sitio web.</li>
+      <li>Indicar el tour de interés, la fecha tentativa, el número de personas y cualquier requerimiento especial.</li>
+      <li>Abonar el depósito o pago acordado según las instrucciones proporcionadas por el equipo de Mundo Inka.</li>
+    </ul>
+    <p>La reserva quedará <strong>confirmada</strong> una vez recibido el comprobante de pago y enviada la confirmación escrita por parte de nuestra agencia.</p>
+    <p>Para tours que requieren entradas con cupo limitado (Machu Picchu, Montaña 7 Colores), se recomienda reservar con un mínimo de <strong>5 días de anticipación</strong> para garantizar disponibilidad.</p>
+  </div>
+
+  <div class="legal-section" id="t4">
+    <div class="legal-section-header">
+      <div class="ls-num">4</div>
+      <h2>Precios y formas de pago</h2>
+    </div>
+    <p>Los precios publicados en el sitio web son <strong>referenciales y por persona</strong>, salvo indicación contraria. Los precios definitivos se confirmarán en la cotización personalizada enviada al cliente.</p>
+    <p>Los precios incluyen los servicios detallados en la descripción de cada tour (transporte, guía, alimentación y entradas según corresponda). No incluyen gastos personales, propinas ni servicios no especificados.</p>
+    <p>Medios de pago aceptados:</p>
+    <ul>
+      <li><strong>Transferencia bancaria</strong> a cuentas indicadas por Viajes Mundo Inka.</li>
+      <li><strong>Yape / Plin</strong> al número +51 915 059 707.</li>
+      <li><strong>Pago en efectivo</strong> (soles peruanos) en caso de servicios locales acordados.</li>
+      <li><strong>Tarjeta de crédito/débito</strong> según disponibilidad al momento de la reserva.</li>
+    </ul>
+    <div class="legal-warning">Los precios están expresados en soles peruanos (S/) salvo que se indique otra moneda. Las variaciones del tipo de cambio no afectan los precios ya confirmados en una moneda específica.</div>
+  </div>
+
+  <div class="legal-section" id="t5">
+    <div class="legal-section-header">
+      <div class="ls-num">5</div>
+      <h2>Política de cancelación y reembolsos</h2>
+    </div>
+    <p>En caso de que el cliente desee cancelar una reserva confirmada, se aplicará la siguiente política:</p>
+    <table class="cancel-table">
+      <thead>
+        <tr>
+          <th>Anticipación a la fecha del tour</th>
+          <th>Reembolso aplicable</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Más de 7 días antes</strong></td>
+          <td>100% del monto pagado (menos comisiones bancarias si aplican)</td>
+        </tr>
+        <tr>
+          <td><strong>Entre 4 y 7 días antes</strong></td>
+          <td>50% del monto pagado</td>
+        </tr>
+        <tr>
+          <td><strong>Entre 1 y 3 días antes</strong></td>
+          <td>25% del monto pagado</td>
+        </tr>
+        <tr>
+          <td><strong>El mismo día del tour</strong></td>
+          <td>Sin reembolso</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Cancelaciones por causas de fuerza mayor</strong> (desastres naturales, huelgas, cierres de vías, emergencias de salud declaradas por autoridades peruanas) serán evaluadas caso a caso, ofreciendo reprogramación del tour sin costo adicional como primera alternativa.</p>
+    <p>Las entradas a Machu Picchu y Montaña de 7 Colores adquiridas por el cliente no son reembolsables por política del Ministerio de Cultura del Perú.</p>
+    <div class="legal-highlight">Para iniciar una cancelación contacta por WhatsApp al +51 915 059 707 o al correo reservas.viajesmundoinka@gmail.com con el asunto "CANCELACIÓN + tu nombre".</div>
+  </div>
+
+  <div class="legal-section" id="t6">
+    <div class="legal-section-header">
+      <div class="ls-num">6</div>
+      <h2>Modificaciones del tour por parte de la agencia</h2>
+    </div>
+    <p>Viajes Mundo Inka se reserva el derecho de realizar modificaciones en la logística de los tours (horarios, rutas, vehículos, restaurantes) por razones operativas, climáticas o de seguridad, siempre preservando la calidad del servicio.</p>
+    <p>En caso de <strong>cancelación total del tour por parte de la agencia</strong> (por causas ajenas al cliente), el cliente podrá elegir entre:</p>
+    <ul>
+      <li>Reprogramación del tour para otra fecha sin costo adicional.</li>
+      <li>Reembolso del 100% del monto pagado a Viajes Mundo Inka.</li>
+    </ul>
+    <p>La agencia notificará cualquier modificación relevante al cliente con la mayor anticipación posible a través de WhatsApp o correo electrónico.</p>
+  </div>
+
+  <div class="legal-section" id="t7">
+    <div class="legal-section-header">
+      <div class="ls-num">7</div>
+      <h2>Responsabilidades del viajero</h2>
+    </div>
+    <p>El cliente se compromete a:</p>
+    <ul>
+      <li>Presentarse en el punto de encuentro acordado con la antelación indicada (generalmente 15 minutos antes).</li>
+      <li>Llevar consigo su documento de identidad o pasaporte vigente, así como las entradas o tickets requeridos.</li>
+      <li>Informar a la agencia sobre condiciones de salud relevantes (embarazo, problemas cardíacos, altitude sickness previo, alergias alimentarias) antes del tour.</li>
+      <li>Vestir ropa y calzado adecuados según las indicaciones de cada tour.</li>
+      <li>Respetar las instrucciones del guía durante todo el recorrido.</li>
+      <li>Tratar con respeto los sitios naturales y arqueológicos visitados, siguiendo las normas del MINCETUR y el Ministerio de Cultura.</li>
+    </ul>
+    <div class="legal-warning">Los tours de trekking (Humantay, Ausangate, Montaña 7 Colores) se desarrollan a altitudes entre 4,000 y 5,200 msnm. Es responsabilidad del viajero consultar a su médico si tiene condiciones de salud preexistentes.</div>
+  </div>
+
+  <div class="legal-section" id="t8">
+    <div class="legal-section-header">
+      <div class="ls-num">8</div>
+      <h2>Responsabilidad de la agencia</h2>
+    </div>
+    <p>Viajes Mundo Inka se compromete a:</p>
+    <ul>
+      <li>Proporcionar los servicios contratados tal y como se describen en la cotización confirmada.</li>
+      <li>Garantizar guías certificados y personal capacitado en todos los tours.</li>
+      <li>Operar con vehículos en buen estado y con conductores con licencia vigente.</li>
+      <li>Comunicar oportunamente cualquier cambio relevante en el itinerario.</li>
+    </ul>
+    <p>Viajes Mundo Inka <strong>no será responsable</strong> de daños o perjuicios derivados de:</p>
+    <ul>
+      <li>Eventos de fuerza mayor: fenómenos climáticos, desastres naturales, huelgas o bloqueos de vías.</li>
+      <li>Actos u omisiones del propio cliente o de terceros ajenos a la agencia.</li>
+      <li>Pérdida o daño de objetos personales del viajero durante el tour.</li>
+      <li>Problemas de salud preexistentes no informados a la agencia.</li>
+    </ul>
+  </div>
+
+  <div class="legal-section" id="t9">
+    <div class="legal-section-header">
+      <div class="ls-num">9</div>
+      <h2>Seguros y emergencias</h2>
+    </div>
+    <p>Viajes Mundo Inka recomienda encarecidamente que todos los viajeros contraten un <strong>seguro de viaje</strong> que cubra asistencia médica, evacuación de emergencia y cancelación de viaje. Este seguro no está incluido en el precio de los tours salvo indicación expresa.</p>
+    <p>En caso de emergencia durante un tour, nuestros guías están capacitados para brindar primeros auxilios básicos y coordinar asistencia médica. El número de emergencias local en Cusco es el <strong>106 (SAMU)</strong> y existe el servicio de rescate de alta montaña a través de la Policía Nacional del Perú.</p>
+    <p>El cliente autoriza a la agencia a contactar servicios de emergencia en su nombre si la situación lo requiere y no puede dar su consentimiento directo.</p>
+    <div class="legal-highlight">Botiquín de primeros auxilios disponible en todos los tours. Nuestros guías están entrenados en primeros auxilios básicos y prevención del mal de altura (soroche).</div>
+  </div>
+
+  <div class="legal-section" id="t10">
+    <div class="legal-section-header">
+      <div class="ls-num">10</div>
+      <h2>Ley aplicable y resolución de conflictos</h2>
+    </div>
+    <p>Los presentes Términos y Condiciones se rigen por la legislación peruana vigente, en particular por:</p>
+    <ul>
+      <li>La Ley N.° 29571 (Código de Protección y Defensa del Consumidor).</li>
+      <li>La Ley N.° 29733 (Ley de Protección de Datos Personales).</li>
+      <li>El Reglamento de Agencias de Viajes y Turismo del MINCETUR.</li>
+    </ul>
+    <p>Ante cualquier discrepancia, las partes se comprometen a buscar una solución amistosa en primera instancia, a través de comunicación directa con Viajes Mundo Inka. Si no se alcanza un acuerdo, el cliente podrá presentar su reclamación ante el <strong>INDECOPI</strong> (Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual) o ante los juzgados competentes de la ciudad del Cusco, Perú.</p>
+    <p>También puedes usar nuestro <a href="reclamaciones.html" style="color:var(--teal-dark);font-weight:600;">Libro de Reclamaciones</a> para registrar cualquier queja o sugerencia.</p>
+    <div class="legal-highlight">¿Preguntas sobre estos términos? Escríbenos a <strong>reservas.viajesmundoinka@gmail.com</strong> o al WhatsApp <strong>+51 915 059 707</strong>. Respondemos en menos de 1 hora.</div>
+  </div>
+
+</div>
+
+<footer class="legal-footer-bar">
+  <p class="lf-copy">© 2026 Viajes Mundo Inka · Cusco, Perú</p>
+  <div class="lf-links">
+    <a href="privacidad.html">Privacidad</a>
+    <a href="cookies.html">Cookies</a>
+    <a href="terminos.html">Términos</a>
+    <a href="reclamaciones.html">Reclamaciones</a>
+    <a href="index.html">Inicio</a>
+  </div>
+</footer>
+
+<div class="wa-float">
+  <a href="https://wa.me/51915059707?text=Hola,%20tengo%20una%20consulta%20sobre%20los%20t%C3%A9rminos" target="_blank" rel="noopener" class="wa-btn">
+    <svg width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+</body>
+</html>
